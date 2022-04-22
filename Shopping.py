@@ -24,11 +24,11 @@ cursor.execute('SELECT * FROM dbo.UserLogins')
 def addItemToCart():
     msg = ''
     #Gets item information from form
-    if requests.method == 'POST' and 'itemId' in requests.form and 'itemName' in requests.form and 'itemPrice' in requests.form and 'itemQuantity' in requests.form and 'username' in requests.form:
+    if requests.method == 'POST' and 'itemId' in requests.form and 'itemName' in requests.form and 'itemPrice' in requests.form and 'amount' in requests.form and 'username' in requests.form:
         itemId = requests['itemId']
         itemName = requests['itemName']
         itemPrice = requests['itemPrice'] #Will be the subtotal i believe
-        itemQuantity = requests['itemQuantity'] #Not sure if this is what the item quantity is called in html
+        amount = requests['amount'] #Not sure if this is what the item quantity is called in html
         username = requests['username'] #Username of customer currently using site
 
         #Check if itemId + customer name is in cart already -> add to quantity?
@@ -39,11 +39,11 @@ def addItemToCart():
             cursor.execute('SELECT amount FROM Cart WHERE itemId = ? and username = ?', itemId, username)
             oldQuantity = cursor.fetchone()
 
-            cursor.execute('UPDATE Cart SET amount = ? + ? WHERE itemid = ? AND username = ?', itemQuantity, oldQuantity, itemId, username)
+            cursor.execute('UPDATE Cart SET amount = ? + ? WHERE itemId = ? AND username = ?', amount, oldQuantity, itemId, username)
             conn.commit()
         #itemId doesnt exist, add new entry to Cart
         else:
-            cursor.execute("INSERT INTO dbo.Cart(itemid, itemname, amount, username) values(?, ?, ?, ?)", itemId, itemName, itemQuantity, username)
+            cursor.execute("INSERT INTO dbo.Cart(itemId, itemName, amount, username) values(?, ?, ?, ?)", itemId, itemName, itemQuantity, username)
             conn.commit()
 
     #add print statement later!
@@ -55,24 +55,24 @@ def addItemToCart():
 def addItemToCurrOrders():
     msg = ''
     #Gets item information from form
-    if requests.method == 'POST' and 'itemId' in requests.form and 'itemQuantity' in requests.form and 'username' in requests.form:
+    if requests.method == 'POST' and 'itemId' in requests.form and 'quantity' in requests.form and 'username' in requests.form:
         itemId = requests['itemId']
-        itemQuantity = requests['itemQuantity'] 
+        quantity = requests['quantity'] 
         username = requests['username'] #Username of customer currently using site
 
         #Check if itemId + customer name is in current orders
-        item = cursor.execute('SELECT * FROM Currentorders WHERE itemid = ? AND username = ?', itemId, username)
+        item = cursor.execute('SELECT * FROM Currentorders WHERE itemId = ? AND username = ?', itemId, username)
 
         #if item exists, add to quantity in current orders
         if item:
-            cursor.execute('SELECT quantity FROM Currentorders WHERE itemid = ? and username = ?', itemId, username)
+            cursor.execute('SELECT quantity FROM CurrentOrders WHERE itemId = ? and username = ?', itemId, username)
             oldQuantity = cursor.fetchone()
 
-            cursor.execute('UPDATE Currentorders SET quantity = ? + ? WHERE itemid = ? AND username = ?', itemQuantity, oldQuantity, itemId, username)
+            cursor.execute('UPDATE CurrentOrders SET quantity = ? + ? WHERE itemId = ? AND username = ?', quantity, oldQuantity, itemId, username)
             conn.commit()
         #itemId doesnt exist, add new entry to Current Orders
         else:
-            cursor.execute("INSERT INTO dbo.Currentorders(items, quantity, username, progress) values(?, ?, ?, ?)", itemName, itemQuantity, username, "in-progress")
+            cursor.execute("INSERT INTO dbo.CurrentOrders(items, quantity, username, progress) values(?, ?, ?, ?)", itemName, quantity, username, "in-progress")
             conn.commit()
 
     #add print statement later!
