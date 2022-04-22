@@ -102,26 +102,21 @@ def updateItem():
     return render_template('', msg=msg)
     conn.close()
 
-#Search items based on name or description -- choice will be either "name" or "description" ?
-def searchItems(choice):
+#Search items based on name or description
+def searchItems():
     msg = ''
-    if requests.method == 'POST' and 'itemName' in requests.form and 'description' in requests.form:
+    if requests.method == 'POST' and 'description' in requests.form:
         #Gets item information from form
-        itemName = requests['itemName']
-        itemDesc = requests['description']
+        itemDesc = requests['description'] #search variable (can be changed)
 
-        if choice == "description":
-            #Add percent to front and end of string so it searches in any position
-            likeDescrip = '%' + itemDesc + '%'
-            cursor.execute('SELECT * FROM Items WHERE itemName LIKE ?', likeDescrip)
-        else:
-            #Add percent to front and end of string so it searches in any position
-            likeDescrip = '%' + itemName + '%'
-            cursor.execute('SELECT * FROM Items WHERE itemName LIKE ?', itemName)
-
+        #Add percent to front and end of string so it searches in any position
+        likeDescrip = '%' + itemDesc + '%'
+        
+        cursor.execute('SELECT * FROM Items WHERE itemName LIKE ?', likeDescrip)
+  
         items = cursor.fetchall()
 
-        # if there are items -> return to new database
+        # if there are items -> return it
         if items:
             return render_template(''), items
         else
