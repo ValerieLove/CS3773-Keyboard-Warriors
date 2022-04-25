@@ -104,7 +104,7 @@ def cart():
                    
                    
                    Click here toview receipt:<br>
-                   <a href="http://www.realpython.com">Real Python</a> 
+                   <a href="receipt.pdf">Real Python</a> 
                    
                 </p>
               </body>
