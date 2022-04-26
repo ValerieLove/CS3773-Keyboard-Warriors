@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/Webstore.css' %}">
+  <title>Everspring Webpage</title>
+ 
+  <div class="topnav">
+    <a href="{% url 'Home' %}">Home</a>
+    <a href="{% url 'Men' %}">Men</a>
+    <a href="{% url 'Women' %}">Women</a>
+    <a href="{% url 'Brand' %}">Brand </a>
+    <a href="{% url 'Login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a href="{% url 'Search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+  </div>
+  <style>
+    body{
+        margin: 0px;
+        border: 0px;
+    }
+    #header{
+        width: 0%;
+        height: 0px;
+        background: #03c04a;
+        border: white;
+    }
+    #sidebar{
+        width: 300px;
+        height: 400px;
+        background: white;
+        float: left;
+        border: black;
+    }
+    #data{
+        height: 700px;
+        background: white;
+    }
+    ul li{
+     padding: 20px;
+  }
+    ul li:hover{
+        background: #03c04a;
+    }
+    </style>
+</head>
+
+<body>
+    <br><br><br><br><br><br>
+    <div id="header">
+       
+    </div>
+     
+    <div id="sidebar">
+        <ul>
+            <li> Add Item</li>
+            <li> Update Item</li>
+            <li> Discount Codes</li>
+            <li> Previous Orders</li>
+        </ul>
+    </div>
+  
+    <div id="data">
+        
+    </div>
+  
+  </body>
+  
+  </html>
