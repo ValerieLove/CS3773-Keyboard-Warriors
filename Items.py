@@ -4,10 +4,10 @@ import pyodbc
 import smtplib
 import webbrowser
 import os
-from utils.UserLogin import YourClassOrFunction
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, redirect, url_for, session
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from models import Items
+from models import Userlogin
+from django.views import View
 
 # creating and viewing the html files in python
 app = django(__name__)
