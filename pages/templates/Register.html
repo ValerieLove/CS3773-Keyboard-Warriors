@@ -1,28 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="Webstore.css">
-<title>Everspring Webpage</title>
-<style>
 
-</style>
-<div class="topnav">
-    <a href="Webstore.html">Home</a>
-    <a href="Men.html">Men</a>
-    <a href="Women.html">Woman</a>
-    <a href="Brand.html">Brand </a>
-    <a href="Login.html"><i class="fa fa-fw fa-user"></i> Login</a>
-    <a href="Search.html"><i class="fa fa-fw fa-search"></i> Search</a>
-    <a href="Cart.html"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/Webstore.css' %}">
+  <title>Everspring Webpage</title>
+
+  <div class="topnav">
+    <a href="{% url 'Home' %}">Home</a>
+    <a href="{% url 'Men' %}">Men</a>
+    <a href="{% url 'Women' %}">Women</a>
+    <a href="{% url 'Brand' %}">Brand </a>
+    <a href="{% url 'Login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a href="{% url 'Search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
   </div>
 </head>
 
 <body>
 <br><br><br><br><br><br><br><br>
 <div class="links">
-  <a href="Login.html">Login</a>
-  <a href="Register.html" class="register-form">Register</a>
+  <a href="{% url 'Login' %}">Login</a>
+  <a href="{% url 'Register' %}"><i class="register-form"></i> Register</a>
 </div>
 <br>
 <form action="/action_page.python">
