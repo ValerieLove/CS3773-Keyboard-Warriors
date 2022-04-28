@@ -33,7 +33,7 @@
           <tr>
             <th>Sno.</th>
             <th>Image</th>
-            <th>Item</th>
+            <th>Items</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
@@ -45,10 +45,10 @@
           <tr>
             <td>{{forloop.counter}}</td>
             <td><img style="height: 80px;" class="rounded-circle" src="{{item.image.url}}" alt=""></td>
-            <td>{{item.name}}</td>
-            <td>{{item.price|currency}}</td>
-            <td>{{item|cart_quantity:request.session.cart}}</td>
-            <td>{{item|price_total:request.session.cart|currency}}</td>
+            <td>{{items.name}}</td>
+            <td>{{items.price|currency}}</td>
+            <td>{{items|cart_quantity:request.session.cart}}</td>
+            <td>{{items|price_total:request.session.cart|currency}}</td>
           </tr>
 
           {% endfor %}
@@ -59,7 +59,7 @@
           <tr>
             <th colspan="4"></th>
             <th class="" colspan="">Total</th>
-            <th>{{item|total_cart_price:request.session.cart|currency}}</th>
+            <th>{{items|total_cart_price:request.session.cart|currency}}</th>
           </tr>
         </tfoot>
       </table>
