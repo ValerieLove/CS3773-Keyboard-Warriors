@@ -11,7 +11,7 @@ from django.views import View
 
 class Signup (View):
     def get(self, request):
-        return render(request, 'Register.html')
+        return render(request, '/django-project/EverSpringSite/pages/Register.html')
   
     def post(self, request):
         postData = request.POST
@@ -27,7 +27,7 @@ class Signup (View):
         }
         error_message = None
   
-        customer = UserLogin(username=username,
+        customer = userlogins(username=username,
                             phonenumber=phonenumber,
                             email=email,
                             password=password)
@@ -37,13 +37,13 @@ class Signup (View):
             print(username, phonenumber, email, password)
             customer.password = make_password(customer.password)
             customer.register()
-            return redirect('Webstore.html')
+            return redirect('/django-project/EverSpringSite/pages/Webstore.html')
         else:
             data = {
                 'error': error_message,
                 'values': value
             }
-            return render(request, 'Register.html', data)
+            return render(request, '/django-project/EverSpringSite/pages/Register.html', data)
   
     def validateCustomer(self, customer):
         error_message = None
