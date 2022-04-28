@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.hashers import check_password
-from pages.models import Userlogins
+from pages.models import userlogins
 from django.views import View
   
   
