@@ -11,7 +11,7 @@ from django.views import View
 
 class Signup (View):
     def get(self, request):
-        return render(request, 'signup.html')
+        return render(request, 'Register.html')
   
     def post(self, request):
         postData = request.POST
