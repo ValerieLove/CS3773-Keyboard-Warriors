@@ -1,1 +1,2 @@
 # CS3773-Keyboard-Warriors
+Everspring is an online clothing store with many fashionable brands. This website for the store is powered by the Django framework and driven by the Microsoft SQL Server database. Project managed by Valeria Villanueva. UI/UX Design by Jaden Dickerson. Database Management and Back End by Roberto Rodriguez and Natalie Mosqueda. Hosting and Misc. Front End by Tyler Holstein.
