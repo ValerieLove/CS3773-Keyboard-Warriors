@@ -29,11 +29,6 @@ class Discountcodes(models.Model):
     discountpercentage = models.IntegerField(db_column='DiscountPercentage')  # Field name made lowercase.
     newtotal = models.DecimalField(db_column='newTotal', max_digits=19, decimal_places=4)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'DiscountCodes'
-
-
 class Items(models.Model):
     itemname = models.CharField(db_column='itemName', max_length=30)  # Field name made lowercase.
     itemid = models.CharField(db_column='itemID', max_length=30)  # Field name made lowercase.
@@ -41,11 +36,6 @@ class Items(models.Model):
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     username = models.CharField(primary_key=True, max_length=20)
     itemimage = models.BinaryField(db_column='itemImage')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'Items'
-
 
 class Pastorders(models.Model):
     items = models.CharField(max_length=10)
