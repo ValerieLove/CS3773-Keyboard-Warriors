@@ -6,6 +6,9 @@ from pages.models.userlogins import Userlogins
 from pages.models.currentorders import Currentorders
 from pages.models.category import Category
 # Register your models here.
+class AdminProduct(admin.ModelAdmin):
+    list_display = ['name', 'price', 'category']
+
 admin.site.register(Cart)
 admin.site.register(Discountcodes)
 admin.site.register(Items)
