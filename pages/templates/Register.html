@@ -29,7 +29,7 @@
             <hr>
             </div>
             <h3 class="alert alert-light rounded-pill" style="text-align:center" >Sign up to become a member</h3>
-            <form method="POST" action="/signup">
+            <form method="POST" action="/Register">
                 
                 {% csrf_token %}
   
@@ -74,7 +74,7 @@
               </div>
   
                 <hr>
-                <button type="submit" onclick="exec('python UserLoginsBack.py');" class="btn btn-sm btn-success col-lg-12">Register</button> <button><a href="{% url 'Login' %}">Login to your account</a></button>
+                <button type="submit" class="btn btn-sm btn-success col-lg-12">Register</button> <button><a href="{% url 'Login' %}">Login to your account</a></button>
   
   
                 
