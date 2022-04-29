@@ -47,8 +47,7 @@
 					</div>
 
 					<div class="card-footer p-0 no-gutters">
-            
-            {% else %}
+           
 						<form action="/#{{item.itemid}}" method="POST" class="btn-block">
 							{% csrf_token %}
 							<input hidden type="text" name='product' value='{{items.itemid}}'>
