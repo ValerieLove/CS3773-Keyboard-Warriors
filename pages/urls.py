@@ -9,10 +9,6 @@ from .views import (
     CartPageView,
     RegisterPageView
 )
-from .views.UserLoginsBack import Signup,Login,logout
-from .views.cart import Cart
-from .views.checkout import CheckOut
-from .middlewares.auth import auth_middleware
 
 
 urlpatterns = [
