@@ -1,5 +1,6 @@
 from django.db import models
 from .category import Category
+from PIL import Image
 
 class Items(models.Model):
     itemname = models.CharField(db_column='itemName', max_length=30)  # Field name made lowercase.
