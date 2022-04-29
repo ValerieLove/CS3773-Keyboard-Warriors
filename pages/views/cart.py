@@ -10,4 +10,4 @@ class Cart(View):
         ids = list(request.session.get('Cart').keys())
         products = Items.get_products_by_id(ids)
         print(products)
-        return render(request , 'Cart.html' , {'products' : products} )
+        return render(request , 'Cart.html' , {'items' : products} )
