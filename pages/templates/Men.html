@@ -33,22 +33,22 @@
   <br><br><br><br><br>
   
 <!-- all products -->
-		<div id='products' class="col-lg-9 mx-auto">
+		<div id='items' class="col-lg-9 mx-auto">
 			<div class="row mx-auto">
-				{% for product in products %}
+				{% for item in items %}
 				<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
-					<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+					<img class="card-img-top" src="{{item.image.url}}" alt="Card image cap">
 					<div class="card-body">
-						<p class="card-title">{{product.name}}</p>
-						<p class="card-text"><b>{{product.price|currency}}</b></p>
+						<p class="card-title">{{item.name}}</p>
+						<p class="card-text"><b>{{item.price|currency}}</b></p>
 					</div>
 
 					<div class="card-footer p-0 no-gutters">
             
             {% else %}
-						<form action="/#{{product.id}}" method="POST" class="btn-block">
+						<form action="/#{{item.id}}" method="POST" class="btn-block">
 							{% csrf_token %}
-							<input hidden type="text" name='product' value='{{product.id}}'>
+							<input hidden type="text" name='product' value='{{item.id}}'>
 							<input type="submit" class="float-right btn btn-success form-control"
 								value="Add To Cart">
 						</form>
