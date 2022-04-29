@@ -43,13 +43,14 @@
         </thead>
         <tbody>
 
-          {% for item in items %}
+          {% for items in items %}
           <tr>
             <td>{{forloop.counter}}</td>
             <td><img style="height: 80px;" class="rounded-circle" src="{{item.image.url}}" alt=""></td>
             <td>{{items.itemname}}</td>
             <td>{{items.itemprice|currency}}</td>
-            
+            <td>{{items|cart_quantity:request.session.cart}}</td>
+            <td>{{items|itemprice_total:request.session.cart|currency}}</td>
           </tr>
 
           {% endfor %}
