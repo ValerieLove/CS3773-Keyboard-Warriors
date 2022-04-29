@@ -7,7 +7,7 @@ class Items(models.Model):
     itemcategory= models.ForeignKey(Category,on_delete=models.CASCADE,default=1 )
     itemprice = models.DecimalField(db_column='itemPrice', max_digits=19, decimal_places=4)  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
-    itemimage = models.ImageField(db_column='itemImage')  # Field name made lowercase.
+    itemimage = models.ImageField(upload_to="/images")  # Field name made lowercase.
 
     @staticmethod
     def get_all_items():
