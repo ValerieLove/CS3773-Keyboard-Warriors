@@ -13,13 +13,13 @@ class Userlogins(models.Model):
     @staticmethod
     def get_username_by_email(email):
         try:
-            return Userlogin.objects.get(email= email)
+            return Userlogins.objects.get(email= email)
         except:
             return False
 
 
     def isExists(self):
-        if Userlogin.objects.filter(email = self.email):
+        if Userlogins.objects.filter(email = self.email):
             return True
 
         return False
