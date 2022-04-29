@@ -7,7 +7,7 @@ from pages.models import Items
 
 class Cart(View):
     def get(self , request):
-        ids = list(request.session.get('Cart').keys())
+        ids = list(request.session.get('cart').keys())
         products = Items.get_products_by_id(ids)
         print(products)
         return render(request , 'Cart.html' , {'items' : products} )
