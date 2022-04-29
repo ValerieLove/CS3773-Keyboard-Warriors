@@ -47,10 +47,10 @@
           <tr>
             <td>{{forloop.counter}}</td>
             <td><img style="height: 80px;" class="rounded-circle" src="{{item.image.url}}" alt=""></td>
-            <td>{{items.name}}</td>
-            <td>{{items.price|currency}}</td>
-            <td>{{items|cart_quantity:request.session.cart}}</td>
-            <td>{{items|price_total:request.session.cart|currency}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price|currency}}</td>
+            <td>{{item|cart_quantity:request.session.cart}}</td>
+            <td>{{item|price_total:request.session.cart|currency}}</td>
           </tr>
 
           {% endfor %}
