@@ -50,7 +50,7 @@
             <td>{{items.itemname}}</td>
             <td>{{items.itemprice|currency}}</td>
             <td>{{items|cart_quantity:request.session.cart}}</td>
-            <td>{{items|itemprice_total:request.session.cart|currency}}</td>
+            <td>{{items|price_total:request.session.cart|currency}}</td>
           </tr>
 
           {% endfor %}
