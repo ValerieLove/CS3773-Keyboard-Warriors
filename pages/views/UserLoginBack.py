@@ -11,7 +11,7 @@ import os
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 class Signup (View):
     def get(self, request):
-        return render(request, os.path.join(CURRENT_DIR, "Register.html"))
+        return render(request, os.path.join(CURRENT_DIR, "signup.html"))
   
     def post(self, request):
         postData = request.POST
