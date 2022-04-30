@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
 ]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
-#ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
     "pages.apps.PagesConfig",
 ]
 
@@ -145,3 +146,4 @@ MEDIA_ROOT = "/django-project/site/public/media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+CRISPY_TEMPLATE_PACK = "bootstrap4"

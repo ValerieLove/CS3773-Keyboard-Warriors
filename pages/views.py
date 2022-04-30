@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import RegisterForm
 
 
 # Create your views here.
@@ -41,5 +40,11 @@ class RegisterPageView(TemplateView):
 #    template_name = "templates/signup.html"
 
 def SignUp(response):
-    form = UserCreationForm()
+    if response.method == "POST":
+        form = RegisterForm(response.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("/Home")
+    else:
+        form = RegisterForm()
     return render(response, "signup.html", {"form":form})
