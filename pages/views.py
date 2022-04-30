@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
 from .forms import RegisterForm
 
 
@@ -25,7 +26,7 @@ class SearchPageView(TemplateView):
 
 
 class LoginPageView(TemplateView):
-    template_name = "Login.html"
+    template_name = "registration/Login.html"
 
 
 class BrandPageView(TemplateView):
@@ -50,4 +51,4 @@ def SignUp(response):
         return redirect("/")
     else:
         form = RegisterForm()
-    return render(response, "signup.html", {"form":form})
+    return render(response, "registration/signup.html", {"form":form})
