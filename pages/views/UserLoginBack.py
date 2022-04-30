@@ -37,13 +37,13 @@ class Signup (View):
             print(username, phonenumber, email, password)
             customer.password = make_password(customer.password)
             customer.register()
-            return redirect(os.path.join(CURRENT_DIR, "Register.html"))
+            return redirect(os.path.join(CURRENT_DIR, "signup.html"))
         else:
             data = {
                 'error': error_message,
                 'values': value
             }
-            return render(request, os.path.join(CURRENT_DIR, "Register.html"), data)
+            return render(request, os.path.join(CURRENT_DIR, "signup.html"), data)
   
     def validateCustomer(self, customer):
         error_message = None
