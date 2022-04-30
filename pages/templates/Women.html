@@ -35,6 +35,10 @@
 		<div id='items' class="col-lg-9 mx-auto">
 			<div class="row mx-auto">
 				{% for item in items %}
+				{{ items.itemname }}
+				{{ items.itemprice }}
+				{{ items.itemimage }}
+				{{ items.itemId }}
 				<div class="card mx-auto mb-3" id={{item.itemid}} style="width: 18rem;">
 					<img class="card-img-top" src="{{item.itemimage.url}}" alt="Card image cap">
 					<div class="card-body">
