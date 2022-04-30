@@ -7,7 +7,7 @@ from .views import (
     BrandPageView,
     LoginPageView,
     CartPageView,
-    signup,
+    RegisterPageView
 )
 from . import views
 
@@ -19,7 +19,7 @@ urlpatterns = [
     path("Brand/", BrandPageView.as_view(), name="Brand"),
     path("Login/", LoginPageView.as_view(), name="Login"),
     path("Cart/", CartPageView.as_view(), name="Cart"),
-    #path("signup/", RegisterPageView.as_view(), name="signup"),
-    path("signup/", views.SignUp.as_view(), name="signup"),
+    path("signup/", RegisterPageView.as_view(), name="signup"),
+    #path("signup/", views.SignUp.as_view(), name="signup"),
     path("", HomePageView.as_view(), name="Home"),
 ]
