@@ -32,11 +32,10 @@ ALLOWED_HOSTS = [
     "34.125.88.240",
     "www.everspringdesigns.tech",
     "everspringdesigns.tech",
-    "everspringdesigns",
 ]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
-# ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 # Application definition
 

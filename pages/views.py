@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import CreateView
 from django.shortcuts import render
 
 
