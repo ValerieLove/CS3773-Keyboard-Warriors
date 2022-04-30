@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include 
 from django.conf import settings
 from django.conf.urls.static import static
-#from . import views
+from pages import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("signup/", v.SignUp, name="signup"),
     path("", include("pages.urls")), #this points at our pages app and then within pages we match views to URL routes
 ]
 #if settings.DEBUG:

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+# TEMP_PATH = os.path.realpath('.')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,8 +27,16 @@ SECRET_KEY = "django-insecure-0jp*tb!la+!eeq*5j(9t%)%j!bs%&59)3ix&w&yx(8k1ne!#0w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["34.125.88.240", "www.everspringdesigns.tech", "everspringdesigns.tech", "everspringdesigns"]
+# UNCOMMENT THIS WHEN PUSHING TO THE SERVER
+ALLOWED_HOSTS = [
+    "34.125.88.240",
+    "www.everspringdesigns.tech",
+    "everspringdesigns.tech",
+    "everspringdesigns",
+]
 
+# COMMENT THIS OUT WHEN DEVELOPING LOCALLY
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -57,7 +67,8 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            str(BASE_DIR.joinpath("templates"))
+            #    str(BASE_DIR.joinpath("templates"))
+            "templates"
         ],  # tells django the location of the new templates directory
         "APP_DIRS": True,
         "OPTIONS": {
@@ -77,17 +88,17 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "project",
-        "USER": "djangouser",
-        "PASSWORD": "Tdizzlefizzle1!",
-        "HOST": "localhost",
-        "PORT": "3306",
+       "ENGINE": "django.db.backends.mysql",
+       "NAME": "project",
+       "USER": "djangouser",
+       "PASSWORD": "Tdizzlefizzle1!",
+       "HOST": "localhost",
+       "PORT": "3306",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -125,7 +136,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"  # tells django to look for the static files in this directory
 STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
-#STATIC_ROOT = "/django-project/src/static/css"
+# STATIC_ROOT = "/django-project/src/static/css"
 STATIC_ROOT = "/django-project/site/public/static"
 MEDIA_ROOT = "/django-project/site/public/media"
 
