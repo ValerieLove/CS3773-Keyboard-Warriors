@@ -20,8 +20,7 @@ from django.conf.urls.static import static
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("pages.urls")),
-    path("Register/", views.SignUp.as_view(), name="Register") #this points at our pages app and then within pages we match views to URL routes
+    path("", include("pages.urls")), #this points at our pages app and then within pages we match views to URL routes
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
