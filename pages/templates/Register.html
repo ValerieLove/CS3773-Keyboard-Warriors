@@ -1,4 +1,23 @@
-<!--/templates/register.html-->
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/Webstore.css' %}">
+  <title>Everspring Webpage</title>
+
+  <div class="topnav">
+    <a href="{% url 'Home' %}">Home</a>
+    <a href="{% url 'Men' %}">Men</a>
+    <a href="{% url 'Women' %}">Women</a>
+    <a href="{% url 'Brand' %}">Brand </a>
+    <a href="{% url 'Login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a href="{% url 'Search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+  </div>
+</head>
 
 {% block content %}
 <h2>Register</h2>
