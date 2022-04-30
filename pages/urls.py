@@ -7,7 +7,7 @@ from .views import (
     BrandPageView,
     LoginPageView,
     CartPageView,
-    RegisterPageView
+    #RegisterPageView
 )
 from . import views
 
