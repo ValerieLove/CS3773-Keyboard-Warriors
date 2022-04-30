@@ -1,4 +1,6 @@
 from django.views.generic import TemplateView
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -30,3 +32,8 @@ class BrandPageView(TemplateView):
 
 class RegisterPageView(TemplateView):
     template_name = "Register.html"
+    
+class SignUp(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "templates/Register.html"
