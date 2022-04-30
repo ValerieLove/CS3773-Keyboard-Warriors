@@ -33,9 +33,9 @@ class BrandPageView(TemplateView):
     template_name = "Brand.html"
 
 class RegisterPageView(TemplateView):
-    template_name = "Register.html"
+    template_name = "signup.html"
     
 class SignUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("Login")
-    template_name = "templates/Register.html"
+    template_name = "templates/signup.html"
