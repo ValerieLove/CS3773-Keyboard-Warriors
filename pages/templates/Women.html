@@ -18,6 +18,9 @@
     <a href="{% url 'Login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
     <a href="{% url 'Search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
     <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}"><i class="Logout"></i> logout</a>
+    {% endif %}
   </div>
 </head>
 
