@@ -2,7 +2,7 @@ from django.views.generic import TemplateView, CreateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
-from .models.models import Items
+from .models.models import Items, Currentorders
 # from models.models import *
 
 
@@ -65,23 +65,22 @@ def SignUp(response):
     return render(response, "registration/signup.html", {"form": form})
 
 
-# def menstore(request):
-# items = Items.objects.all()
-# context = {'items':items}
-# return render(request, 'templates/newMen.html')
+def menstore(request):
+    items = Items.objects.all()
+    context = {'items':items}
+    return render(request, 'templates/newMen.html', context)
 
-# def womenstore(request):
-# items = Items.objects.all()
-# context = {'items':items}
-# return render(request, 'templates/newWomen.html')
+def womenstore(request):
+    items = Items.objects.all()
+    context = {'items':items}
+    return render(request, 'templates/newWomen.html', context)
 
-# def cart(request):
-#   if request.userlogin.is_authenticated:
-# customer = request.username.userlogin
-# order, created =Currentorder.objects.get_or_create(customer=customer, complete=False)
-# items = order.cart_set.all()
-# else:
-# items[]
-
-# context = {'items' = items}
-# return render(request, 'template/cart.html', context)
+def cart(request):
+    if request.userlogin.is_authenticated:
+        customer = request.username.userlogin
+        order, created =Currentorders.objects.get_or_create(customer=customer, complete=False)
+        items = order.cart_set.all()
+    else:
+        items = []
+        context = {"items":items}
+    return render(request, 'template/cart.html', context)
