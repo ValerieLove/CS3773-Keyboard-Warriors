@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
+#from models.models import *
 
 
 # Create your views here.
@@ -54,3 +55,25 @@ def SignUp(response):
     else:
         form = RegisterForm()
     return render(response, "registration/signup.html", {"form":form})
+
+
+#def menstore(request):
+#items = Items.objects.all()
+#context = {'items':items}
+#return render(request, 'templates/newMen.html')
+
+#def womenstore(request):
+#items = Items.objects.all()
+#context = {'items':items}
+#return render(request, 'templates/newWomen.html')
+
+#def cart(request):
+#   if request.userlogin.is_authenticated:
+        #customer = request.username.userlogin
+        #order, created =Currentorder.objects.get_or_create(customer=customer, complete=False)
+        #items = order.cart_set.all()
+    #else:
+        #items[]
+
+    #context = {'items' = items}
+    #return render(request, 'template/cart.html', context)
