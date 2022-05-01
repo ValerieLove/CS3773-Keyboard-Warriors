@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
+
 #from models.models import *
 
 
@@ -46,12 +48,13 @@ class CheckoutPageView(TemplateView):
 def SignUp(response):
     if response.method == "POST":
         form = RegisterForm(response.POST)
-        #if RegisterForm.password1 != RegisterForm.password2:
-        #    form = False
         if form.is_valid():
             form.save()
-            
-        return redirect("/")
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username = username,password = password)
+            login(response, user)
+            return redirect("/")
     else:
         form = RegisterForm()
     return render(response, "registration/signup.html", {"form":form})
