@@ -19,7 +19,7 @@ class Currentorders(models.Model):
     complete = models.BooleanField(default=False, null=True, blank=False)
 
 class Cart(models.Model):
-    itemname = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    itemname = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
     amount = models.IntegerField()
     order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
 
