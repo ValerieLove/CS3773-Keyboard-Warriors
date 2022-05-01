@@ -50,8 +50,6 @@ class CheckoutPageView(TemplateView):
 
 
 def SignUp(response):
-    if response.user.is_authenticated:
-        return redirect("/")
     if response.method == "POST":
         form = RegisterForm(response.POST)
         if form.is_valid():
