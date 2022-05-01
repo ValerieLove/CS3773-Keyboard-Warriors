@@ -9,15 +9,6 @@
 from django.db import models
 #from django.contrib.auth.models import User
 
-class Cart(models.Model):
-    itemname = models.CharField(db_column='itemName', max_length=20)  # Field name made lowercase.  #models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
-    amount = models.IntegerField()
-    subtotal = models.DecimalField(max_digits=19, decimal_places=4)#DELETE
-    total = models.DecimalField(max_digits=19, decimal_places=4)#DELTE
-    itemid = models.CharField(db_column='itemId', max_length=10)  # Field name made lowercase. #DELETE
-    username = models.CharField(primary_key=True, max_length=20)#DELETE
-    #order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
-
 class Currentorders(models.Model):
     ordernumber = models.IntegerField(db_column='OrderNumber')  # Field name made lowercase.
     items = models.CharField(max_length=20)
@@ -25,12 +16,16 @@ class Currentorders(models.Model):
     username = models.CharField(primary_key=True, max_length=20) #models.FoerignKey(Userlogin, on_delete=models.SET_NULL, null=True, blank=True) connect this to tables
     progress = models.CharField(db_column='Progress', max_length=20)  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
-    #complete = models.BooleanField(default=False, null=True, blank=Flase)
+    complete = models.BooleanField(default=False, null=True, blank=False)
+
+class Cart(models.Model):
+    itemname = models.CharField(db_column='itemName', max_length=20)  # Field name made lowercase.  #models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    amount = models.IntegerField()
+    order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
 
 class Discountcodes(models.Model):
     discountcode = models.CharField(db_column='DiscountCode', primary_key=True, max_length=10)  # Field name made lowercase.
     discountpercentage = models.IntegerField(db_column='DiscountPercentage')  # Field name made lowercase.
-    newtotal = models.DecimalField(db_column='newTotal', max_digits=19, decimal_places=4)  # Field name made lowercase. DELETE
 
 class Items(models.Model):
     itemname = models.CharField(db_column='itemName', max_length=30)  # Field name made lowercase.
@@ -47,26 +42,10 @@ class Pastorders(models.Model):
     dateplaced = models.DateField(db_column='DatePlaced')  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
 
-class Userlogins(models.Model):
-    username = models.CharField(primary_key=True, max_length=30) # user = models.OnwToOneField(User, on_delete=models.CASCADE, null=Tre, blank)  one user for one customer
-    email = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)
-    phonenumber = models.CharField(max_length=20)
+
     
     def register(self):
         self.save()
 
 
-    @staticmethod
-    def get_username_by_email(email):
-        try:
-            return Userlogins.objects.get(email= email)
-        except:
-            return False
 
-
-    def isExists(self):
-        if Userlogins.objects.filter(email = self.email):
-            return True
-
-        return False
