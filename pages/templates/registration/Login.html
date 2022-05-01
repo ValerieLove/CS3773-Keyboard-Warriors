@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load crispy_forms_tags %}
 <html>
 
 <head>
@@ -23,6 +24,9 @@
 <h2>Log In</h2>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form|crispy }}
   <button type="submit">Log In</button>
+  <br><br><br>
+  <a href="{% url 'signup' %}">Register</a> <br><br>
+  <a href="{% url 'Home' %}">Back to Home</a>
 </form>
