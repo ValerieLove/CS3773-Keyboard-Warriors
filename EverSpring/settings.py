@@ -28,14 +28,14 @@ SECRET_KEY = "django-insecure-0jp*tb!la+!eeq*5j(9t%)%j!bs%&59)3ix&w&yx(8k1ne!#0w
 DEBUG = True
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
-#ALLOWED_HOSTS = [
-#    "34.125.88.240",
-#    "www.everspringdesigns.tech",
-#    "everspringdesigns.tech",
-#]
+ALLOWED_HOSTS = [
+    "34.125.88.240",
+    "www.everspringdesigns.tech",
+    "everspringdesigns.tech",
+]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -91,14 +91,14 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
-    #"default": {
-    #   "ENGINE": "django.db.backends.mysql",
-    #   "NAME": "project",
-    #   "USER": "djangouser",
-    #   "PASSWORD": "Tdizzlefizzle1!",
-    #   "HOST": "localhost",
-    #   "PORT": "3306",
-    #}
+    "default": {
+       "ENGINE": "django.db.backends.mysql",
+       "NAME": "project",
+       "USER": "djangouser",
+       "PASSWORD": "Tdizzlefizzle1!",
+       "HOST": "localhost",
+       "PORT": "3306",
+    }
 }
 
 # Password validation
@@ -149,4 +149,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = ""
+LOGOUT_REDIRECT_URL = ""
