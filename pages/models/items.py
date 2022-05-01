@@ -18,7 +18,7 @@ class Items(models.Model):
         if category_id:
             return Items.objects.filter (category=category_id)
         else:
-            return Items.get_all_products();
+            return Items.get_all_items();
     @property
     def imageURL(self):
         try:
@@ -27,3 +27,4 @@ class Items(models.Model):
             url = '.'
         return url
     
+   

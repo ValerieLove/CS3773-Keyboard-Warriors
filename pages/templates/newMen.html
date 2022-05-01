@@ -27,17 +27,17 @@
 </head>
 <br><br><br><br><br><br><br>
 
-<!--{% for items in items %}-->
+{% for items in items %}
 <div class="col-lg-4">
-    <img class="thumbnail" src="{% static 'images/placeholder.png' %}"> <!--{{items.itemimage.url}}-->
+    <img class="thumbnail" src="{{% items.itemimage.url %}}"> <!--{{items.itemimage.url}}-->
     <div class="box-element product">
-        <h6><strong>Product</strong></h6>
+        <h6><strong>{{items.itemname}}</strong></h6>
         <hr>        <!--{{items.itemname}}-->
 
         <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
         <a class="btn btn-outline-success" href="#">View</a>
         <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-        <!--${{items.itemprice|floatformat:2}}</strong></h4>-->
+        ${{items.itemprice|floatformat:2}}</strong></h4>
     </div>
 </div>
 <!--{% endfor %}-->
