@@ -1,8 +1,8 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
-
+from .models.models import Items
 # from models.models import *
 
 
@@ -12,10 +12,12 @@ class HomePageView(TemplateView):
 
 
 class MenPageView(TemplateView):
+    model = Items
     template_name = "newMen.html"
 
 
 class WomenPageView(TemplateView):
+    model = Items
     template_name = "newWomen.html"
 
 
@@ -41,7 +43,6 @@ class RegisterPageView(TemplateView):
 
 class CheckoutPageView(TemplateView):
     template_name = "Checkout.html"
-
 
 # class SignUp(CreateView):
 #    form_class = UserCreationForm
