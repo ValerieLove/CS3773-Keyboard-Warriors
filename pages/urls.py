@@ -9,6 +9,7 @@ from .views import (
     LoginPageView,
     CartPageView,
     #RegisterPageView
+    CheckoutPageView,
 )
 #from .views import SignUp
 
@@ -19,6 +20,7 @@ urlpatterns = [
     path("Brand/", BrandPageView.as_view(), name="Brand"),
     path("accounts/login/", LoginPageView.as_view(), name="Login"),
     path("Cart/", CartPageView.as_view(), name="Cart"),
+    path("Checkout/", CheckoutPageView.as_view(), name="Checkout"),
     #path("signup/", SignUp, name="signup"),
     #path("signup/", RegisterPageView.as_view(), name="signup"),
     #path("signup/", views.SignUp.as_view(), name="signup"),

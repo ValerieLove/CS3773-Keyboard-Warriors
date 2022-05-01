@@ -9,15 +9,15 @@ class HomePageView(TemplateView):
 
 
 class MenPageView(TemplateView):
-    template_name = "Men.html"
+    template_name = "newMen.html"
 
 
 class WomenPageView(TemplateView):
-    template_name = "Women.html"
+    template_name = "newWomen.html"
 
 
 class CartPageView(TemplateView):
-    template_name = "Cart.html"
+    template_name = "newCart.html"
 
 
 class SearchPageView(TemplateView):
@@ -33,6 +33,9 @@ class BrandPageView(TemplateView):
 
 class RegisterPageView(TemplateView):
     template_name = "signup.html"
+
+class CheckoutPageView(TemplateView):
+    template_name = "Checkout.html"
     
 #class SignUp(CreateView):
 #    form_class = UserCreationForm
