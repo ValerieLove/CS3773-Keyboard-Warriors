@@ -23,7 +23,7 @@ urlpatterns = [
     path("signup/", v.SignUp, name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("pages.urls")), #this points at our pages app and then within pages we match views to URL routes
-    path("", TemplateView.as_view(template_name='home.html'), name='home'),
+    #path("", TemplateView.as_view(template_name='home.html'), name='home'),
 ]
 #if settings.DEBUG:
 #    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # TEMP_PATH = os.path.realpath('.')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -62,13 +62,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "EverSpring.urls"
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),)
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            #    str(BASE_DIR.joinpath("templates"))
-            "templates"
+            str(BASE_DIR.joinpath("templates"))
+            #"templates"
         ],  # tells django the location of the new templates directory
         "APP_DIRS": True,
         "OPTIONS": {

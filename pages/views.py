@@ -6,7 +6,7 @@ from .forms import RegisterForm
 
 # Create your views here.
 class HomePageView(TemplateView):
-    template_name = "Webstore.html"
+    template_name = "home.html"
 
 
 class MenPageView(TemplateView):
