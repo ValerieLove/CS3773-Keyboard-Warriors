@@ -13,15 +13,12 @@ class Currentorders(models.Model):
     ordernumber = models.IntegerField(db_column='OrderNumber')  # Field name made lowercase.
     items = models.CharField(max_length=20)
     total = models.DecimalField(max_digits=19, decimal_places=4)
-    username = models.FoerignKey(Userlogin, on_delete=models.SET_NULL, null=True, blank=True) 
+    username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True) 
     progress = models.CharField(db_column='Progress', max_length=20)  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     complete = models.BooleanField(default=False, null=True, blank=False)
 
-class Cart(models.Model):
-    itemname = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
-    amount = models.IntegerField()
-    order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
+
 
 class Discountcodes(models.Model):
     discountcode = models.CharField(db_column='DiscountCode', primary_key=True, max_length=10)  # Field name made lowercase.
@@ -33,6 +30,11 @@ class Items(models.Model):
     itemprice = models.DecimalField(db_column='itemPrice', max_digits=19, decimal_places=4)  # Field name made lowercase. #change to floatfield
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     itemimage = models.ImageField(null=True, upload_to="images")  # Field name made lowercase.
+
+class Cart(models.Model):
+    itemname = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
+    amount = models.IntegerField()
+    order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
 
 class Pastorders(models.Model):
     items = models.CharField(max_length=10)
