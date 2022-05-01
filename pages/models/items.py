@@ -19,3 +19,11 @@ class Items(models.Model):
             return Items.objects.filter (category=category_id)
         else:
             return Items.get_all_products();
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = '.'
+        return url
+    
