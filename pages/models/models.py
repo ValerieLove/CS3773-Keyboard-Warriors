@@ -9,15 +9,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Currentorders(models.Model):
-    ordernumber = models.IntegerField(db_column='OrderNumber')  # Field name made lowercase.
-    items = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
-    total = models.DecimalField(max_digits=19, decimal_places=4)
-    username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True) 
-    progress = models.CharField(db_column='Progress', max_length=20)  # Field name made lowercase.
-    quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
-    complete = models.BooleanField(default=False, null=True, blank=False)
-
 class Discountcodes(models.Model):
     discountcode = models.CharField(db_column='DiscountCode', primary_key=True, max_length=10)  # Field name made lowercase.
     discountpercentage = models.IntegerField(db_column='DiscountPercentage')  # Field name made lowercase.
@@ -28,6 +19,15 @@ class Items(models.Model):
     itemprice = models.DecimalField(db_column='itemPrice', max_digits=19, decimal_places=4)  # Field name made lowercase. #change to floatfield
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     itemimage = models.ImageField(null=True, upload_to="images")  # Field name made lowercase.
+
+class Currentorders(models.Model):
+    ordernumber = models.IntegerField(db_column='OrderNumber')  # Field name made lowercase.
+    items = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
+    total = models.DecimalField(max_digits=19, decimal_places=4)
+    username = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True) 
+    progress = models.CharField(db_column='Progress', max_length=20)  # Field name made lowercase.
+    quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
+    complete = models.BooleanField(default=False, null=True, blank=False)
 
 class Cart(models.Model):
     itemname = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
