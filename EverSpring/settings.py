@@ -91,14 +91,14 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
-    "default": {
-       "ENGINE": "django.db.backends.mysql",
-       "NAME": "project",
-       "USER": "djangouser",
-       "PASSWORD": "Tdizzlefizzle1!",
-       "HOST": "localhost",
-       "PORT": "3306",
-     }
+    #"default": {
+    #   "ENGINE": "django.db.backends.mysql",
+    #   "NAME": "project",
+    #   "USER": "djangouser",
+    #   "PASSWORD": "Tdizzlefizzle1!",
+    #   "HOST": "localhost",
+    #   "PORT": "3306",
+    #}
 }
 
 # Password validation
