@@ -28,6 +28,9 @@
 <body>
   <br><br><br><br><br><br>
   <header>Everspring</header>
+    {% if user.is_authenticated %}
+    <header>Welcome to Everspring {{user.name}}<header>   
+    {% endif %}
   <br><br><br><br>
   
   <div class="slideshow-container">
