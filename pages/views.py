@@ -26,7 +26,7 @@ class SearchPageView(TemplateView):
 
 
 class LoginPageView(TemplateView):
-    template_name = "registration/Login.html"
+    template_name = "registration/login.html"
 
 
 class BrandPageView(TemplateView):
