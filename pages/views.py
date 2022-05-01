@@ -1,12 +1,11 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
 from .forms import RegisterForm
 
 
 # Create your views here.
 class HomePageView(TemplateView):
-    template_name = "home.html"
+    template_name = "Webstore.html"
 
 
 class MenPageView(TemplateView):
