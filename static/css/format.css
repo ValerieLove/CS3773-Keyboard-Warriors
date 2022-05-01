@@ -16,3 +16,7 @@
 .product{
 	border-radius: 0 0 4px 4px;
 }
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
