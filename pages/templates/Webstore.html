@@ -27,10 +27,12 @@
 
 <body>
   <br><br><br><br><br><br>
-  <header>Everspring</header>
     {% if user.is_authenticated %}
-    <header>Welcome to Everspring {{user.name}}<header>   
+    <header>Welcome to Everspring {{user}}<header>
+      {% else %}
+      <header>Everspring</header>
     {% endif %}
+     
   <br><br><br><br>
   
   <div class="slideshow-container">
