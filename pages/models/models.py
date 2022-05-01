@@ -7,19 +7,19 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 class Currentorders(models.Model):
     ordernumber = models.IntegerField(db_column='OrderNumber')  # Field name made lowercase.
     items = models.CharField(max_length=20)
     total = models.DecimalField(max_digits=19, decimal_places=4)
-    username = models.CharField(primary_key=True, max_length=20) #models.FoerignKey(Userlogin, on_delete=models.SET_NULL, null=True, blank=True) connect this to tables
+    username = models.FoerignKey(Userlogin, on_delete=models.SET_NULL, null=True, blank=True) 
     progress = models.CharField(db_column='Progress', max_length=20)  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     complete = models.BooleanField(default=False, null=True, blank=False)
 
 class Cart(models.Model):
-    itemname = models.CharField(db_column='itemName', max_length=20)  # Field name made lowercase.  #models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    itemname = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     amount = models.IntegerField()
     order = models.ForeignKey(Currentorders, on_delete=models.SET_NULL, null=True)
 
