@@ -138,6 +138,7 @@ STATIC_URL = "/static/"  # tells django to look for the static files in this dir
 STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 # STATIC_ROOT = "/django-project/src/static/css"
 STATIC_ROOT = "/django-project/site/public/static"
+MEDIA_URL = '/images/'
 MEDIA_ROOT = "/django-project/site/public/media"
 
 # Default primary key field type
