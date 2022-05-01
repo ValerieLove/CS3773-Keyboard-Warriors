@@ -18,8 +18,6 @@ class Currentorders(models.Model):
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     complete = models.BooleanField(default=False, null=True, blank=False)
 
-
-
 class Discountcodes(models.Model):
     discountcode = models.CharField(db_column='DiscountCode', primary_key=True, max_length=10)  # Field name made lowercase.
     discountpercentage = models.IntegerField(db_column='DiscountPercentage')  # Field name made lowercase.
