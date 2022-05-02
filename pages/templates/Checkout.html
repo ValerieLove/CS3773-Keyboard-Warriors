@@ -22,7 +22,8 @@
     <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
     {% if user.is_authenticated %}
     <a href="{% url 'logout' %}"><i class="Logout"></i> Logout</a>
-    <a href="{% url 'password_change' %}"><i class="Reset"></i> Change Password</a>
+    <a href="{% url 'password_change' %}"><i class="Change"></i> Change Password</a>
+    <a href="{% url 'password_reset' %}"><i class="Reset"></i> Password Reset/a>
     {% endif %}
   </div>
 </head>
