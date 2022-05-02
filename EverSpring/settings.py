@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-0jp*tb!la+!eeq*5j(9t%)%j!bs%&59)3ix&w&yx(8k1ne!#0w
 DEBUG = True
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
-ALLOWED_HOSTS = [
+#ALLOWED_HOSTS = [
     "34.125.88.240",
     "www.everspringdesigns.tech",
     "everspringdesigns.tech",
@@ -92,12 +92,12 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
     "default": {
-       "ENGINE": "django.db.backends.mysql",
-       "NAME": "project",
-       "USER": "djangouser",
-       "PASSWORD": "Tdizzlefizzle1!",
-       "HOST": "localhost",
-       "PORT": "3306",
+        #   "ENGINE": "django.db.backends.mysql",
+    #   "NAME": "project",
+    #   "USER": "djangouser",
+    #   "PASSWORD": "Tdizzlefizzle1!",
+    #   "HOST": "localhost",
+    #   "PORT": "3306",
     }
 }
 

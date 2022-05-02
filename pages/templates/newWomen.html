@@ -2,6 +2,7 @@
 {% extends 'Webstore.html' %}
 {% load static %}
 {% block content %}
+
 <html>
 
 <body>
@@ -23,7 +24,7 @@
     <div class="col-lg-4">
     <img class="thumbnail" src="{% static 'css/woman_hoodie.jpg' %}">
     
-        <h6><strong>Dumb shirt</strong></h6>
+        <h6><strong>Women's Hoodie</strong></h6>
         <hr>        
 
         <button  class="btn btn-outline-secondary add-btn" button onclick="add6()">Add to Cart</button>
@@ -39,19 +40,26 @@
     <div class="col-lg-4">
     <img class="thumbnail" src="{% static 'css/pink_tee.jpg' %}">
     
-        <h6><strong>Dumb shirt</strong></h6>
+        <h6><strong>Pink T-shirt </strong></h6>
         <hr>        
 
-        <button  class="btn btn-outline-secondary add-btn" button onclick="add7()">Add to Cart</button>
+        <button  class="btn btn-outline-secondary add-btn" button onclick="myalert()">Add to Cart</button>
         <a class="btn btn-outline-success" href="#">View</a>
         <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
         ${{items.itemprice|floatformat:2}}</strong></h4></div>
 
 
     </div>
+  <script>
+      function myalert() {
+            alert("Pink Shirt has been added to your cart!!");
+        }
+  </script>
+
+    
     <br><br><br><br><br><br><br><br><br><br>
     {% endblock content %}
-    <script src="math.js"></script>
+    
 </div>
 </body>
 </html>

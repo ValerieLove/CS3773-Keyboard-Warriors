@@ -10,26 +10,6 @@
 
 <head>
 
-<<<<<<< HEAD
-=======
-  </style>
-  <div class="topnav">
-    <a href="{% url 'Home' %}">Home</a>
-    <a href="{% url 'Men' %}">Men</a>
-    <a href="{% url 'Women' %}">Women</a>
-    <a href="{% url 'Brand' %}">Brand </a>
-    <a href="{% url 'Login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
-    <a href="{% url 'Search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
-    <a href="{% url 'Cart' %}"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}"><i class="Logout"></i> Logout</a>
-    <a href="{% url 'password_change' %}"><i class="Change"></i> Change Password</a>
-    <a href="{% url 'password_reset' %}"><i class="Reset"></i> Password Reset</a>
-    {% else %}
-    <a href="{% url 'signup' %}">Register</a> <br><br>
-    {% endif %}
-  </div>
->>>>>>> 51ad4d4bbfa27e08575e819589a0f37165848ae5
 </head>
 <br><br><br><br><br><br>
 	<div class="row">
@@ -42,8 +22,8 @@
 				<br>
 				<table class="table">
 					<tr>
-						<th><h5>Items: <strong>3</strong></h5></th>
-						<th><h5>Total:<strong> $42</strong></h5></th>
+						<th><h5>Number of Items: 3<strong></strong></h5></th>
+						<th><h5>Total: $75.00<strong></strong></h5></th>
 						<th>
 							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'Checkout' %}">Checkout</a>
 						</th>
@@ -64,17 +44,17 @@
 				
 				<div class="cart-row">
 					<div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
-					<div style="flex:2"><p>Product 1</p></div>
-					<div style="flex:1"><p>$20</p></div>
+					<div style="flex:2"><p>Item</p></div>
+					<div style="flex:1"><p>Price</p></div>
 					<div style="flex:1">
-						<p class="quantity">2</p>
+						<p class="quantity">Quanity</p>
 						<div class="quantity">
 							<img class="chg-quantity" src="{% static  'images/arrow-up.png' %}">
 					
 							<img class="chg-quantity" src="{% static  'images/arrow-down.png' %}">
 						</div>
 					</div>
-					<div style="flex:1"><p>$32</p></div>
+					<div style="flex:1"><p>$</p></div>
 				</div>
 
 			</div>

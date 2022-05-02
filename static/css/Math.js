@@ -10,6 +10,17 @@
  var total = 0.00;
  var tax = total*0.0825;
  var new_total= total+tax;
+ var slap = 0.00;
+
+ var new_total= total+tax+slap;
+
+
+ document.getElementById('price').innerHTML = total + " + " + tax + " + " + slap + " =  $" + new_total;
+ document.getElementById('cartNum').innerHTML = cart;
+
+function discount(){
+    slap = total * 0.20;
+}
 
 
 function updateCart(){
@@ -19,6 +30,7 @@ function add1(){
     total = total + 15.00;
     cart++;
     quantity1--;
+    string = "Black shirt"
 }
 function add2(){
     total = total + 15.00;
@@ -26,7 +38,7 @@ function add2(){
     quantity2--;
 }
 function add3(){
-    total = total + 15.00;
+    total = total + 40.00;
     cart++;
     quantity3--;
 }
@@ -51,7 +63,4 @@ function add7(){
     quantity7--;
 }
 
-   var new_total= total+tax;
-
-
-document.getElementById('price').innerHTML = total + " + " + tax + " = " + newTotal;
+    
