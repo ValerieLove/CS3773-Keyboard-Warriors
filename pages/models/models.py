@@ -30,6 +30,15 @@ class Currentorders(models.Model):
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     complete = models.BooleanField(default=False, null=True, blank=False)
 
+class Address(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length=60, default="Miami")
+    state = models.CharField(max_length=30, default="Florida")
+    zipcode = models.CharField(max_length=5, default="33165")
+   
+
 class Cart(models.Model):
     itemname = models.ForeignKey(Items, on_delete=models.SET_NULL, null=True)
     amount = models.IntegerField()

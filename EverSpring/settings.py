@@ -36,7 +36,11 @@ DEBUG = True
 #]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
+<<<<<<< HEAD
 ALLOWED_HOSTS = []
+=======
+#ALLOWED_HOSTS = []
+>>>>>>> 51ad4d4bbfa27e08575e819589a0f37165848ae5
 
 # Application definition
 
@@ -92,8 +96,17 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
     "default": {
+<<<<<<< HEAD
     'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+=======
+       "ENGINE": "django.db.backends.mysql",
+       "NAME": "project",
+       "USER": "djangouser",
+       "PASSWORD": "Tdizzlefizzle1!",
+       "HOST": "localhost",
+       "PORT": "3306",
+>>>>>>> 51ad4d4bbfa27e08575e819589a0f37165848ae5
     }
 }
 
@@ -145,6 +158,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "evergreenstoreemail@gmail.com"
+EMAIL_HOST_PASSWORD = "KeyboardWarriors"
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

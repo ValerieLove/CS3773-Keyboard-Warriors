@@ -23,6 +23,7 @@ body{
 .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
 	margin-top: 10px;
 }
+<<<<<<< HEAD
 .btn{
     border-radius: 0;
 }
@@ -45,3 +46,13 @@ h4{
 	font-weight: bold;
 	text-align: right;
 }
+=======
+
+.btn{
+	border-radius: 0;
+}
+
+.row-image{
+	width: 100px;
+}
+>>>>>>> 51ad4d4bbfa27e08575e819589a0f37165848ae5

@@ -11,3 +11,20 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "first_name", "last_name", "phone_no", "password1", "password2"]
+
+class AddressForm(UserCreationForm):
+    
+    def clean_password(self): 
+        return self.clean_password
+
+    first_name = forms.CharField(max_length = 20)
+    last_name = forms.CharField(max_length = 20)
+
+    address = forms.CharField(max_length = 30)
+    city = forms.CharField(max_length = 30)
+    state = forms.CharField(max_length = 30)
+    zip_code = forms.CharField(max_length = 5)
+    
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "address", "city", "state", "zip_code"]
