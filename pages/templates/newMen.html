@@ -23,6 +23,8 @@
     <a href="{% url 'logout' %}"><i class="Logout"></i> Logout</a>
     <a href="{% url 'password_change' %}"><i class="Change"></i> Change Password</a>
     <a href="{% url 'password_reset' %}"><i class="Reset"></i> Password Reset</a>
+    {% else %}
+    <a href="{% url 'signup' %}">Register</a> <br><br>
     {% endif %}
     
   </div>
