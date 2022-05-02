@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import RegisterForm
+from .forms import RegisterForm, AddressForm
 #from .models.models import Items, Currentorders
 # from models.models import *
 
@@ -49,7 +49,16 @@ class CheckoutPageView(TemplateView):
 #    success_url = reverse_lazy("Login")
 #    template_name = "templates/signup.html"
 
-
+def AddressInfo(response):
+    if response.method == "POST":
+        form = AddressForm(response.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:
+        form = AddressForm()
+    return render(response, "Checkout.html", {"form": form})
+    
 def SignUp(response):
     if response.method == "POST":
         form = RegisterForm(response.POST)

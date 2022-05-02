@@ -22,6 +22,7 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("signup/", v.SignUp, name="signup"),
+    path("Checkout/", v.AddressInfo, name="Checkout"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("pages.urls")), #this points at our pages app and then within pages we match views to URL routes
     #path("", TemplateView.as_view(template_name='home.html'), name='home'),

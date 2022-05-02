@@ -29,14 +29,14 @@ SECRET_KEY = "django-insecure-0jp*tb!la+!eeq*5j(9t%)%j!bs%&59)3ix&w&yx(8k1ne!#0w
 DEBUG = True
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
-ALLOWED_HOSTS = [
-    "34.125.88.240",
-    "www.everspringdesigns.tech",
-    "everspringdesigns.tech",
-]
+#ALLOWED_HOSTS = [
+#    "34.125.88.240",
+#    "www.everspringdesigns.tech",
+#    "everspringdesigns.tech",
+#]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # Application definition
 
