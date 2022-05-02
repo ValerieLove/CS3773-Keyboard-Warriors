@@ -1,3 +1,6 @@
+body{
+	background-color: hsl(0, 0%, 98%);
+}
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
@@ -19,4 +22,26 @@
 
 .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
 	margin-top: 10px;
+}
+.btn{
+    border-radius: 0;
+}
+
+.row-image{
+    width: 100px;
+}
+h1,h2,h3,h5{
+    color:hsl(0, 0%, 30%);
+}
+h6{
+	font-family: arial;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+h4{
+	font-family: arial;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: right;
 }

@@ -29,14 +29,14 @@ SECRET_KEY = "django-insecure-0jp*tb!la+!eeq*5j(9t%)%j!bs%&59)3ix&w&yx(8k1ne!#0w
 DEBUG = True
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
-ALLOWED_HOSTS = [
-    "34.125.88.240",
-    "www.everspringdesigns.tech",
-    "everspringdesigns.tech",
-]
+#ALLOWED_HOSTS = [
+ #   "34.125.88.240",
+  #  "www.everspringdesigns.tech",
+   # "everspringdesigns.tech",
+#]
 
 # COMMENT THIS OUT WHEN DEVELOPING LOCALLY
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -91,14 +91,10 @@ WSGI_APPLICATION = "EverSpring.wsgi.application"
 
 # UNCOMMENT THIS WHEN PUSHING TO THE SERVER
 DATABASES = {
-    #"default": {
-    #   "ENGINE": "django.db.backends.mysql",
-    #   "NAME": "project",
-    #   "USER": "djangouser",
-    #   "PASSWORD": "Tdizzlefizzle1!",
-    #   "HOST": "localhost",
-    #   "PORT": "3306",
-    #}
+    "default": {
+    'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation
@@ -139,8 +135,8 @@ STATIC_URL = "/static/"  # tells django to look for the static files in this dir
 STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 # STATIC_ROOT = "/django-project/src/static/css"
 STATIC_ROOT = "/django-project/site/public/static"
-MEDIA_URL = "/media/"
-MEDIA_ROOT = "/django-project/site/public/media"
+MEDIA_URL = "/images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

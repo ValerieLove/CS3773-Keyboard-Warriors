@@ -25,4 +25,5 @@ urlpatterns = [
     #path("signup/", RegisterPageView.as_view(), name="signup"),
     #path("signup/", views.SignUp.as_view(), name="signup"),
     path("", HomePageView.as_view(), name="Home"),
+    
 ]
