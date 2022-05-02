@@ -58,7 +58,7 @@ def AddressInfo(response):
     else:
         form = AddressForm()
     return render(response, "Checkout.html", {"form": form})
-    
+
 def SignUp(response):
     if response.method == "POST":
         form = RegisterForm(response.POST)
