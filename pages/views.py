@@ -1,15 +1,10 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-<<<<<<< HEAD
-from .forms import RegisterForm
-from .models.items import Items
-=======
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import RegisterForm, AddressForm
->>>>>>> 51ad4d4bbfa27e08575e819589a0f37165848ae5
 #from .models.models import Items, Currentorders
 # from models.models import *
 
