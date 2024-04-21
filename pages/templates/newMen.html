@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% extends 'Webstore.html' %}
+{% load static %}
+{% block content %}
+<script src="math.js"></script>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/Webstore.css' %}">
+  <link rel="stylesheet" href="{% static 'css/format.css' %}">
+  <title>Everspring Webpage</title>
+  <style>
+
+  </style>
+            
+
+        <button  class="btn btn-outline-secondary add-btn" button onclick="add1()">Add to Cart</button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+        ${{items.itemprice|floatformat:2}}</strong></h4></div>
+        
+
+    
+</div>
+<div class="row">
+    <div class="col-lg-4">
+    <img class="thumbnail" src="{% static 'css/hoodie.jpg' %}">
+    
+        <h6><strong>Hoodie</strong></h6>
+        <hr>        
+
+        <button  class="btn btn-outline-secondary add-btn" button onclick="add2()">Add to Cart</button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+        ${{items.itemprice|floatformat:2}}</strong></h4></div>
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+    <img class="thumbnail" src="{% static 'css/men_jeans.jpg' %}">
+    
+        <h6><strong>Men's Jeans</strong></h6>
+        <hr>        
+
+        <button  class="btn btn-outline-secondary add-btn" button onclick="myalert1()">Add to Cart</button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block; float: right"><strong>$35</strong></h4>
+        ${{items.itemprice|floatformat:2}}</strong></h4></div>
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+</div>
+
+    
+</div><div class="row">
+    <div class="col-lg-4">
+    <img class="thumbnail" src="{% static 'css/white_tee.png' %}">
+    
+        <h6><strong>White T-Shirt</strong></h6>
+        <hr>        
+
+        <button  class="btn btn-outline-secondary add-btn"  button onclick="myalert()">Add to Cart</button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+        ${{items.itemprice|floatformat:2}}</strong></h4></div>
+
+
+    </div>
+
+    <script>
+        function myalert() {
+            alert("White T-shirt has been added to your cart!!");
+        }
+        function myalert1() {
+            alert("Jeans has been added to your cart!!");
+        }
+    </script>
+ 
+
+    
+    
+    <br><br><br><br><br><br><br><br><br><br>
+
+{% endblock content %}
+
+
+
+    
+
+    
+</div>
+</body>
+</html>
